@@ -1,8 +1,7 @@
 var currentPlayer = 0;
 var p1Score = localStorage.getItem("p1Score");
 var p2Score = localStorage.getItem("p2Score");
-console.log(p1Score);
-console.log(p2Score);
+
 var counter = 0;
 var win = 0;
 var plays = [];
@@ -23,7 +22,15 @@ function changeDivScoreValues () {
 }
 
 window.onload = function() {
+    console.log(p1Score);
+console.log(p2Score);
+    if(p1Score==null && p2Score==null){
+        p1Score=0;
+        p2Score=0;
+    }
     changeDivScoreValues();
+    
+    
 };
 
 function resetScore(){
