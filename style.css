@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+:root {
+    --bg-color-dark:#1F3A93;
+    --bg-color-light:#334fac;
+    
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: black;
+    color: white;
+    
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizeSpeed;
     overflow-x: hidden;
+    background-color: var(--bg-color-dark);
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -20,48 +30,61 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: pink;
+    background-color: var(--bg-color-light);
 }
+
+.container h1{
+    background-color: #bcff79;
+    border-radius: 20px;
+    padding: 2px 15px;
+    color: var(--bg-color-light);
+}
+
 
 .button-grid {
     width: 300px;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    background-color: green;
+    margin: 20px;
 }
 
 .btn {
     width: 100px;
     height: 100px;
-    background-color: red;
-    border: 1px solid;
+    border: 7px solid white;
     position: relative;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cross,
-.circle {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
-    width: 32px;
-    height: 32px;
+
+.cross,.circle{
     transition: all 0.2s ease;
     transform: scale(0);
+    position: absolute;
+}
+
+.cross{
+    width: 100%;
 }
 
 
 .cross:before,
 .cross:after {
-    position: absolute;
-    left: 15px;
     content: '';
-    height: 33px;
-    width: 2px;
-    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 55px;
+    width: 10px;
+    border-radius: 100%;
+    background-color: #45d4ff;
+/*    background-color: white;*/
 }
 
 .cross:before {
@@ -73,8 +96,10 @@ body {
 }
 
 .circle {
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    border: 2px solid;
+    border: 9px solid #ff4171;
 }
 
 .cross.active,
@@ -93,4 +118,5 @@ body {
     padding: 10px;
     background-color: dodgerblue;
     cursor: pointer;
+    border-radius: 15px;
 }
