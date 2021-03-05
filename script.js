@@ -18,6 +18,7 @@ const winningCombos = [
 ];
 
 function playAgain() {
+    clearGrid();
     document.querySelector('.flip-card').classList.remove("active");
 }
 
