@@ -1,7 +1,8 @@
+/* eslint-env es6 */
+/* eslint-disable */
 var currentPlayer = 0;
 var p1Score = localStorage.getItem("p1Score");
 var p2Score = localStorage.getItem("p2Score");
-
 var counter = 0;
 var win = 0;
 var plays = [];
@@ -16,34 +17,30 @@ const winningCombos = [
 [2, 4, 6]
 ];
 
-function changeDivScoreValues () {
-    document.querySelector(".player1 span").innerHTML = p1Score;
-    document.querySelector(".player2 span").innerHTML = p2Score;
+function changeDivScoreValues() {
+    document.querySelector(".player1").innerHTML = p1Score;
+    document.querySelector(".player2").innerHTML = p2Score;
 }
-
-window.onload = function() {
+window.onload = function () {
     console.log(p1Score);
-console.log(p2Score);
-    if(p1Score==null && p2Score==null){
-        p1Score=0;
-        p2Score=0;
+    console.log(p2Score);
+    if (p1Score == null && p2Score == null) {
+        p1Score = 0;
+        p2Score = 0;
     }
     changeDivScoreValues();
-    
-    
 };
 
-function resetScore(){
+function resetScore() {
     clearGrid();
-    localStorage.setItem("p1Score",0);
-    localStorage.setItem("p2Score",0);
-    p1Score=0;
-    p2Score=0;
+    localStorage.setItem("p1Score", 0);
+    localStorage.setItem("p2Score", 0);
+    p1Score = 0;
+    p2Score = 0;
     changeDivScoreValues();
     console.log(p1Score);
     console.log(p2Score);
 }
-
 
 function clearGrid() {
     currentPlayer = 0;
@@ -71,9 +68,9 @@ function blockAllbtns() {
 function updateScore() {
     console.log(p1Score);
     console.log(p2Score);
-    !currentPlayer ? document.querySelector(".player1 span").innerHTML = p1Score : document.querySelector(".player2 span").innerHTML = p2Score;
-    localStorage.setItem("p1Score",p1Score);
-    localStorage.setItem("p2Score",p2Score);
+    !currentPlayer ? document.querySelector(".player1").innerHTML = p1Score : document.querySelector(".player2").innerHTML = p2Score;
+    localStorage.setItem("p1Score", p1Score);
+    localStorage.setItem("p2Score", p2Score);
     blockAllbtns();
 }
 
@@ -85,12 +82,9 @@ function checkWin(b) {
         b.querySelector('.cross').classList.add("active");
         b.setAttribute("data-state", "X");
     }
-
     b.style.pointerEvents = 'none';
-
     plays[b.id] = b.getAttribute("data-state");
     console.log(plays);
-
     winningCombos.some(function (e) {
         if (plays[e[0]] === 'X' && plays[e[1]] === 'X' && plays[e[2]] === 'X') {
             p1Score++;
@@ -107,15 +101,12 @@ function checkWin(b) {
                 if (!alert("Player 2 wins!!")) clearGrid();
             }, 1);
         }
-
     });
-    
     counter++;
     if (counter == 9 && win == 0) {
         setTimeout(function () {
             if (!alert("Draw!")) clearGrid();
         }, 1);
     }
-
     togglePlayerTurn();
 }

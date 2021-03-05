@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
 :root {
-    --bg-color-dark:#1F3A93;
-    --bg-color-light:#334fac;
-    
+    --bg-color-dark: #1F3A93;
+    --bg-color-light: #334fac;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
-    
 }
 
 body {
@@ -33,13 +30,12 @@ body {
     background-color: var(--bg-color-light);
 }
 
-.container h1{
+.container h1 {
     background-color: #bcff79;
     border-radius: 20px;
     padding: 2px 15px;
-    color: var(--bg-color-light);
+    color: var(--bg-color-dark);
 }
-
 
 .button-grid {
     width: 300px;
@@ -59,17 +55,16 @@ body {
     align-items: center;
 }
 
-
-.cross,.circle{
+.cross,
+.circle {
     transition: all 0.2s ease;
     transform: scale(0);
     position: absolute;
 }
 
-.cross{
+.cross {
     width: 100%;
 }
-
 
 .cross:before,
 .cross:after {
@@ -84,7 +79,6 @@ body {
     width: 10px;
     border-radius: 100%;
     background-color: #45d4ff;
-/*    background-color: white;*/
 }
 
 .cross:before {
@@ -107,30 +101,51 @@ body {
     transform: scale(1);
 }
 
-
-.score {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
+.scoreboard {
+    background-color: white;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    color: var(--bg-color-dark);
 }
 
-.reset-btn-area{
+.player-score {
+    display: flex;
+    justify-content: space-around;
+}
+
+.score .cross,
+.score .circle {
+    position: static;
+    transform: scale(0.8);
+}
+
+.score .cross {
+    width: 55px;
+    height: 55px;
+}
+
+.score p {
+    font-size: 30px;
+}
+
+.reset-btn-area {
     width: 300px;
     display: flex;
     justify-content: space-around;
-/*    align-items: center;*/
     margin-top: 20px;
 }
 
-.reset-btn{
+.reset-btn {
     padding: 10px;
     background-color: dodgerblue;
     cursor: pointer;
     border-radius: 15px;
     text-align: center;
+    color: white;
 }
 
-#reset{
+#reset {
     background-color: #fa3a3a;
 }
-

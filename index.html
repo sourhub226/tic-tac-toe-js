@@ -12,7 +12,6 @@
 <body>
     <div class="container">
         <h1>Tic Tac Toe</h1>
-
         <div class="button-grid">
             <div class="btn" onclick=checkWin(this) id=0>
                 <div class="cross"></div>
@@ -51,16 +50,24 @@
                 <div class="circle"></div>
             </div>
         </div>
-        <div class="score">
-            <p class="player1">Player 1: <span>0</span></p>
-            <p class="player2">Player 2: <span>0</span></p>
+        <div class="scoreboard">
+            <h2>Score</h2>
+            <div class="player-score">
+                <div class="score">
+                    <div class="cross"></div>
+                    <p class="player1"></p>
+                </div>
+                <div class="score">
+                    <div class="circle"></div>
+                    <p class="player2"></p>
+                </div>
+            </div>
         </div>
         <div class="reset-btn-area">
-        <div class="reset-btn" onclick=clearGrid() id="clear">Clear Grid</div>
-        <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
+            <div class="reset-btn" onclick=clearGrid() id="clear">Clear Grid</div>
+            <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
