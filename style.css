@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 768px;
+    height: 100vh;
+    margin: auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: pink;
+}
+
+.button-grid {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: green;
+}
+
+.btn {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 1px solid;
+    position: relative;
+}
+
+.cross,
+.circle {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    transition: all 0.2s ease;
+    transform: scale(0);
+}
+
+
+.cross:before,
+.cross:after {
+    position: absolute;
+    left: 15px;
+    content: '';
+    height: 33px;
+    width: 2px;
+    background-color: black;
+}
+
+.cross:before {
+    transform: rotate(45deg);
+}
+
+.cross:after {
+    transform: rotate(-45deg);
+}
+
+.circle {
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.cross.active,
+.circle.active {
+    transform: scale(1);
+}
+
+
+.score {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reset{
+    padding: 10px;
+    background-color: dodgerblue;
+    cursor: pointer;
+}
