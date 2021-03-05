@@ -1,6 +1,8 @@
 var currentPlayer = 0;
-var p1Score = 0;
-var p2Score = 0;
+var p1Score = localStorage.getItem("p1Score");
+var p2Score = localStorage.getItem("p2Score");
+console.log(p1Score);
+console.log(p2Score);
 var counter = 0;
 var win = 0;
 var plays = [];
@@ -15,7 +17,28 @@ const winningCombos = [
 [2, 4, 6]
 ];
 
-function reset() {
+function changeDivScoreValues () {
+    document.querySelector(".player1 span").innerHTML = p1Score;
+    document.querySelector(".player2 span").innerHTML = p2Score;
+}
+
+window.onload = function() {
+    changeDivScoreValues();
+};
+
+function resetScore(){
+    clearGrid();
+    localStorage.setItem("p1Score",0);
+    localStorage.setItem("p2Score",0);
+    p1Score=0;
+    p2Score=0;
+    changeDivScoreValues();
+    console.log(p1Score);
+    console.log(p2Score);
+}
+
+
+function clearGrid() {
     currentPlayer = 0;
     counter = 0;
     win = 0
@@ -42,6 +65,8 @@ function updateScore() {
     console.log(p1Score);
     console.log(p2Score);
     !currentPlayer ? document.querySelector(".player1 span").innerHTML = p1Score : document.querySelector(".player2 span").innerHTML = p2Score;
+    localStorage.setItem("p1Score",p1Score);
+    localStorage.setItem("p2Score",p2Score);
     blockAllbtns();
 }
 
@@ -65,14 +90,14 @@ function checkWin(b) {
             win = 1;
             updateScore();
             setTimeout(function () {
-                if (!alert("Player 1 wins!")) reset();
+                if (!alert("Player 1 wins!")) clearGrid();
             }, 1);
         } else if (plays[e[0]] === 'O' && plays[e[1]] === 'O' && plays[e[2]] === 'O') {
             p2Score++;
             win = 1;
             updateScore();
             setTimeout(function () {
-                if (!alert("Player 2 wins!!")) reset();
+                if (!alert("Player 2 wins!!")) clearGrid();
             }, 1);
         }
 
@@ -81,7 +106,7 @@ function checkWin(b) {
     counter++;
     if (counter == 9 && win == 0) {
         setTimeout(function () {
-            if (!alert("Draw!")) reset();
+            if (!alert("Draw!")) clearGrid();
         }, 1);
     }
 
