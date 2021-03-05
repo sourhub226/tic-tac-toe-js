@@ -17,6 +17,10 @@ const winningCombos = [
 [2, 4, 6]
 ];
 
+function playAgain() {
+    document.querySelector('.flip-card').classList.remove("active");
+}
+
 function changeDivScoreValues() {
     document.querySelector(".player1").innerHTML = p1Score;
     document.querySelector(".player2").innerHTML = p2Score;
@@ -66,6 +70,7 @@ function blockAllbtns() {
 }
 
 function updateScore() {
+    document.querySelector(".winner p").innerHTML = "Winner!";
     console.log(p1Score);
     console.log(p2Score);
     !currentPlayer ? document.querySelector(".player1").innerHTML = p1Score : document.querySelector(".player2").innerHTML = p2Score;
@@ -91,22 +96,34 @@ function checkWin(b) {
             win = 1;
             updateScore();
             setTimeout(function () {
-                if (!alert("Player 1 wins!")) clearGrid();
-            }, 1);
+                blockAllbtns()
+                document.querySelector('.winner .shape').classList.remove("circle");
+                document.querySelector('.winner .shape').classList.add("cross");
+                document.querySelector('.flip-card').classList.add("active");
+                clearGrid();
+            }, 500);
         } else if (plays[e[0]] === 'O' && plays[e[1]] === 'O' && plays[e[2]] === 'O') {
             p2Score++;
             win = 1;
             updateScore();
             setTimeout(function () {
-                if (!alert("Player 2 wins!!")) clearGrid();
-            }, 1);
+                blockAllbtns()
+                document.querySelector('.winner .shape').classList.remove("cross");
+                document.querySelector('.winner .shape').classList.add("circle");
+                document.querySelector('.flip-card').classList.add("active");
+                clearGrid();
+            }, 500);
         }
     });
     counter++;
     if (counter == 9 && win == 0) {
         setTimeout(function () {
-            if (!alert("Draw!")) clearGrid();
-        }, 1);
+            document.querySelector('.winner .shape').classList.remove("cross");
+            document.querySelector('.winner .shape').classList.remove("circle");
+            document.querySelector(".winner p").innerHTML = "Draw!";
+            document.querySelector('.flip-card').classList.add("active");
+            clearGrid();
+        }, 300);
     }
     togglePlayerTurn();
 }

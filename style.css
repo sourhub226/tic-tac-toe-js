@@ -28,6 +28,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: var(--bg-color-light);
+    perspective: 1000px;
 }
 
 .container h1 {
@@ -37,11 +38,65 @@ body {
     color: var(--bg-color-dark);
 }
 
-.button-grid {
+.flip-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
     width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+
+.flip-card.active {
+    transform: rotateY(-180deg);
+}
+
+.button-grid,
+.winner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.button-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+}
+
+.winner {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.winner .cross,
+.winner .circle {
+    position: static;
+    transform: scale(1.5);
+}
+
+.winner .cross {
+    width: 55px;
+    height: 55px;
+}
+
+.winner p {
+    margin: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-color-dark);
+}
+
+.winner .reset-btn {
+    margin: 40px;
 }
 
 .btn {
