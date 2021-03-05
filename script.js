@@ -17,6 +17,13 @@ const winningCombos = [
 [2, 4, 6]
 ];
 
+function triggerConfetti() {
+    confetti({
+        particleCount: 150,
+        origin: { y: 0.8 }
+    });
+}
+
 function playAgain() {
     clearGrid();
     document.querySelector('.flip-card').classList.remove("active");
@@ -96,6 +103,7 @@ function checkWin(b) {
             p1Score++;
             win = 1;
             updateScore();
+            triggerConfetti();
             setTimeout(function () {
                 blockAllbtns()
                 document.querySelector('.winner .shape').classList.remove("circle");
@@ -107,6 +115,7 @@ function checkWin(b) {
             p2Score++;
             win = 1;
             updateScore();
+            triggerConfetti();
             setTimeout(function () {
                 blockAllbtns()
                 document.querySelector('.winner .shape').classList.remove("cross");
