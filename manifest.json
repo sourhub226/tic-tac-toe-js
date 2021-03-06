@@ -149,27 +149,33 @@
     },
         {
             "src": "icons/android/android-launchericon-512-512.png",
-            "sizes": "512x512"
+            "sizes": "512x512",
+            "purpose": "any maskable"
     },
         {
             "src": "icons/android/android-launchericon-192-192.png",
-            "sizes": "192x192"
+            "sizes": "192x192",
+            "purpose": "any maskable"
     },
         {
             "src": "icons/android/android-launchericon-144-144.png",
-            "sizes": "144x144"
+            "sizes": "144x144",
+            "purpose": "any maskable"
     },
         {
             "src": "icons/android/android-launchericon-96-96.png",
-            "sizes": "96x96"
+            "sizes": "96x96",
+            "purpose": "any maskable"
     },
         {
             "src": "icons/android/android-launchericon-72-72.png",
-            "sizes": "72x72"
+            "sizes": "72x72",
+            "purpose": "any maskable"
     },
         {
             "src": "icons/android/android-launchericon-48-48.png",
-            "sizes": "48x48"
+            "sizes": "48x48",
+            "purpose": "any maskable"
     },
         {
             "src": "icons/chrome/chrome-extensionmanagementpage-48-48.png",
