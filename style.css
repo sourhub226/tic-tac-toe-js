@@ -228,3 +228,27 @@ body {
 .strike.active{
     width: var(--diagonal,320px);
 }
+
+#notification{
+    width: fit-content;
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    color: white;
+    top: -60px;
+    left: 0;
+    right: 0;
+    border-radius: 15px;
+    font-size: 13px;
+    margin: auto;
+    transition: 0.2s ease;
+}
+
+#notification a{
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+#notification.show{
+    top: 5px;
+}

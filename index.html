@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#334FAC"/>
+    <meta name="theme-color" content="#334FAC" />
     <link rel="apple-touch-icon" href="icons/android/android-launchericon-192-192.png">
     <title>Tic Tac Toe</title>
     <link rel="manifest" href="manifest.json">
@@ -16,7 +16,7 @@
     <div class="container">
         <h1>Tic Tac Toe</h1>
         <div class="flip-card">
-           
+
             <div class="button-grid">
                 <div class="btn" onclick=checkWin(this) id=0>
                     <div class="cross"></div>
@@ -80,20 +80,68 @@
             <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
         </div>
     </div>
+    <div id="notification">A new version of this app is available. <br>Click <a id="reload">here</a> to update.</div>
     <script src="confetti.browser.min.js"></script>
     <script src="script.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js', {
                 scope: '.' // <--- THIS BIT IS REQUIRED
-            }).then(function(registration) {
+            }).then(function (registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
+            }, function (err) {
                 // registration failed :(
                 console.log('ServiceWorker registration failed: ', err);
             });
         }
+
+        let newWorker;
+
+        // The click event on the notification
+        document.getElementById('reload').addEventListener('click', function () {
+            newWorker.postMessage({
+                action: 'skipWaiting'
+            });
+        });
+
+        if ('serviceWorker' in navigator) {
+            // Register the service worker
+            navigator.serviceWorker.register('sw.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+
+                    // An updated service worker has appeared in reg.installing!
+                    newWorker = reg.installing;
+
+                    newWorker.addEventListener('statechange', () => {
+
+                        // Has service worker state changed?
+                        switch (newWorker.state) {
+                            case 'installed':
+
+                                // There is a new service worker available, show the notification
+                                if (navigator.serviceWorker.controller) {
+                                    let notification = document.getElementById('notification');
+                                    notification.className = 'show';
+                                }
+
+                                break;
+                        }
+                    });
+                });
+            });
+
+        }
+
+        let refreshing;
+        // The event listener that is fired when the service worker updates
+        // Here we reload the page
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+            if (refreshing) return;
+            console.log("reloading!!!");
+            window.location.reload();
+            refreshing = true;
+        });
 
     </script>
 </body>
