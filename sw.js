@@ -13,6 +13,7 @@ var appShellFiles = [
 
 self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
+    self.skipWaiting();
     e.waitUntil(
         caches.open(cacheName).then((cache) => {
             console.log('[Service Worker] Caching all: app shell and content');
@@ -36,3 +37,16 @@ self.addEventListener('fetch', (e) => {
         })
     );
 });
+
+self.addEventListener('activate', (e) => {
+    e.waitUntil(
+      caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+          if(key !== cacheName) {
+            return caches.delete(key);
+          }
+        }));
+      })
+    );
+  });
+  
