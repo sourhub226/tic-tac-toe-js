@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -75,8 +76,18 @@
             <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+    <script src="confetti.browser.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then(function() {
+                    console.log("Tada! Your service worker is now registered");
+                });
+        }
+
+    </script>
 </body>
 
 </html>
