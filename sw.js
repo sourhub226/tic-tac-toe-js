@@ -1,6 +1,6 @@
 var cacheName = 'TicTacToe';
 var appShellFiles = [
-    '/',
+    '.',
   'index.html',
   'script.js',
   'style.css',
