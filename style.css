@@ -11,6 +11,7 @@
 :root {
     --bg-color-dark: #1F3A93;
     --bg-color-light: #334fac;
+    --diagonal:initial;
 }
 
 * {
@@ -24,6 +25,7 @@ body {
     overflow-x: hidden;
     background-color: var(--bg-color-dark);
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .container {
@@ -211,4 +213,19 @@ body {
 
 #reset {
     background-color: #fa3a3a;
+}
+
+.strike{
+    width: 0px;
+    height: 8px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50px;
+    background-color: #bcff79;
+    transform-origin: left;
+    transition: width 0.2s ease;
+}
+
+.strike.active{
+    width: var(--diagonal,320px);
 }

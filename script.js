@@ -16,11 +16,71 @@ const winningCombos = [
 [0, 4, 8],
 [2, 4, 6]
 ];
+var strikeline=document.querySelector(".strike");
+var root=document.querySelector(':root');
+
+function strikethrough(index) {
+    
+    switch (index) {
+        case 0:
+            strikeline.style.left="-10px";
+            strikeline.style.top="15%";
+            strikeline.style.transform = "rotate(0deg)";
+            root.style.setProperty('--diagonal', 'initial');
+            break;
+        case 1:
+            strikeline.style.left="-10px";
+            strikeline.style.top="49%";
+            strikeline.style.transform = "rotate(0deg)";
+            root.style.setProperty('--diagonal', 'initial');
+            break;
+        case 2:
+            strikeline.style.left="-10px";
+            strikeline.style.top="82%";
+            strikeline.style.transform = "rotate(0deg)";
+            root.style.setProperty('--diagonal', 'initial');
+            break;
+        case 3:
+            strikeline.style.left="16.5%";
+            strikeline.style.top="-12px";
+            strikeline.style.transform = "rotate(90deg)";
+            root.style.setProperty('--diagonal', 'initial');
+            break;
+        case 4:
+            strikeline.style.left="50%";
+            strikeline.style.top="-12px";
+            strikeline.style.transform = "rotate(90deg)";
+            root.style.setProperty('--diagonal', 'initial');
+            break;
+        case 5:
+            strikeline.style.left="83.5%";
+            strikeline.style.top="-12px";
+            strikeline.style.transform = "rotate(90deg)";
+            root.style.setProperty('--diagonal', 'initial');
+            break;
+        case 6:
+            strikeline.style.left="0px";
+            strikeline.style.top="0px";
+            strikeline.style.transform = "rotate(45deg)";
+            root.style.setProperty('--diagonal', '415px');
+            break;
+        case 7:
+            strikeline.style.left="98%";
+            strikeline.style.top="0px";
+            strikeline.style.transform = "rotate(135deg)";
+            root.style.setProperty('--diagonal', '415px');
+            break;
+    }
+    strikeline.classList.add("active");
+}
+
 
 function triggerConfetti() {
     confetti({
         particleCount: 150,
-        origin: { y: 0.8 }
+        origin: {
+            y: 0.8
+        }
     });
 }
 
@@ -100,29 +160,35 @@ function checkWin(b) {
     console.log(plays);
     winningCombos.some(function (e) {
         if (plays[e[0]] === 'X' && plays[e[1]] === 'X' && plays[e[2]] === 'X') {
+            console.log("win " + winningCombos.indexOf(e));
+            strikethrough(winningCombos.indexOf(e));
             p1Score++;
             win = 1;
             updateScore();
             triggerConfetti();
             setTimeout(function () {
                 blockAllbtns()
+                document.querySelector(".strike").classList.remove("active");
                 document.querySelector('.winner .shape').classList.remove("circle");
                 document.querySelector('.winner .shape').classList.add("cross");
                 document.querySelector('.flip-card').classList.add("active");
                 clearGrid();
-            }, 500);
+            }, 700);
         } else if (plays[e[0]] === 'O' && plays[e[1]] === 'O' && plays[e[2]] === 'O') {
+            console.log("win " + winningCombos.indexOf(e));
+            strikethrough(winningCombos.indexOf(e));
             p2Score++;
             win = 1;
             updateScore();
             triggerConfetti();
             setTimeout(function () {
                 blockAllbtns()
+                document.querySelector(".strike").classList.remove("active");
                 document.querySelector('.winner .shape').classList.remove("cross");
                 document.querySelector('.winner .shape').classList.add("circle");
                 document.querySelector('.flip-card').classList.add("active");
                 clearGrid();
-            }, 500);
+            }, 700);
         }
     });
     counter++;
