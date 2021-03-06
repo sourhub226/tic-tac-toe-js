@@ -1,7 +1,7 @@
 {
     "name": "Tic Tac Toe",
     "short_name": "Tic Tac Toe",
-    "display": "fullscreen",
+    "display": "standalone",
     "start_url": ".",
     "background_color": "#334FAC",
     "theme_color": "#334FAC",
