@@ -1,4 +1,4 @@
-var cacheName = 'TicTacToeV4';
+var cacheName = 'TicTacToeV5';
 var appShellFiles = [
   '.',
   'index.html',
@@ -10,47 +10,45 @@ var appShellFiles = [
   'icons/windows10/Square150x150Logo.scale-400.png', 'icons/windows10/Square310x310Logo.scale-100.png', 'icons/windows10/Square310x310Logo.scale-125.png', 'icons/windows10/Square310x310Logo.scale-150.png', 'icons/windows10/Square310x310Logo.scale-200.png', 'icons/windows10/Square310x310Logo.scale-400.png', 'icons/windows10/Square44x44Logo.scale-100.png', 'icons/windows10/Square44x44Logo.scale-125.png', 'icons/windows10/Square44x44Logo.scale-150.png', 'icons/windows10/Square44x44Logo.scale-200.png', 'icons/windows10/Square44x44Logo.scale-400.png', 'icons/windows10/Square44x44Logo.targetsize-16.png', 'icons/windows10/Square44x44Logo.targetsize-16_altform-unplated.png', 'icons/windows10/Square44x44Logo.targetsize-24.png', 'icons/windows10/Square44x44Logo.targetsize-24_altform-unplated.png', 'icons/windows10/Square44x44Logo.targetsize-256.png', 'icons/windows10/Square44x44Logo.targetsize-256_altform-unplated.png', 'icons/windows10/Square44x44Logo.targetsize-32.png', 'icons/windows10/Square44x44Logo.targetsize-32_altform-unplated.png', 'icons/windows10/Square44x44Logo.targetsize-48.png', 'icons/windows10/Square44x44Logo.targetsize-48_altform-unplated.png', 'icons/windows10/Square71x71Logo.scale-100.png', 'icons/windows10/Square71x71Logo.scale-125.png', 'icons/windows10/Square71x71Logo.scale-150.png', 'icons/windows10/Square71x71Logo.scale-200.png', 'icons/windows10/Square71x71Logo.scale-400.png', 'icons/windows10/StoreLogo.png', 'icons/windows10/StoreLogo.scale-100.png', 'icons/windows10/StoreLogo.scale-125.png', 'icons/windows10/StoreLogo.scale-150.png', 'icons/windows10/StoreLogo.scale-200.png', 'icons/windows10/StoreLogo.scale-400.png'
 ];
 
-
 self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-  e.waitUntil(
-    caches.open(cacheName).then((cache) => {
-      console.log('[Service Worker] Caching all: app shell and content');
-      return cache.addAll(appShellFiles);
-    })
-  );
+    console.log('[Service Worker] Install');
+    e.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            console.log('[Service Worker] Caching all: app shell and content');
+            return cache.addAll(appShellFiles);
+        })
+    );
 });
 
-
 self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((r) => {
-      console.log('[Service Worker] Fetching resource: ' + e.request.url);
-      return r || fetch(e.request).then((response) => {
-        return caches.open(cacheName).then((cache) => {
-          console.log('[Service Worker] Caching new resource: ' + e.request.url);
-          cache.put(e.request, response.clone());
-          return response;
-        });
-      });
-    })
-  );
+    e.respondWith(
+        caches.match(e.request).then((r) => {
+            console.log('[Service Worker] Fetching resource: ' + e.request.url);
+            return r || fetch(e.request).then((response) => {
+                return caches.open(cacheName).then((cache) => {
+                    console.log('[Service Worker] Caching new resource: ' + e.request.url);
+                    cache.put(e.request, response.clone());
+                    return response;
+                });
+            });
+        })
+    );
 });
 
 self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(keyList.map((key) => {
-        if (key !== cacheName) {
-          return caches.delete(key);
-        }
-      }));
-    })
-  );
+    e.waitUntil(
+        caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+                if (key !== cacheName) {
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
 });
 
 self.addEventListener('message', function (event) {
-  if (event.data.action === 'skipWaiting') {
-    self.skipWaiting();
-  }
+    if (event.data.action === 'skipWaiting') {
+        self.skipWaiting();
+    }
 });

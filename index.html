@@ -87,10 +87,10 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js', {
                 scope: '.' // <--- THIS BIT IS REQUIRED
-            }).then(function (registration) {
+            }).then(function(registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function (err) {
+            }, function(err) {
                 // registration failed :(
                 console.log('ServiceWorker registration failed: ', err);
             });
@@ -99,7 +99,7 @@
         let newWorker;
 
         // The click event on the notification
-        document.getElementById('reload').addEventListener('click', function () {
+        document.getElementById('reload').addEventListener('click', function() {
             newWorker.postMessage({
                 action: 'skipWaiting'
             });
@@ -136,7 +136,7 @@
         let refreshing;
         // The event listener that is fired when the service worker updates
         // Here we reload the page
-        navigator.serviceWorker.addEventListener('controllerchange', function () {
+        navigator.serviceWorker.addEventListener('controllerchange', function() {
             if (refreshing) return;
             console.log("reloading!!!");
             window.location.reload();

@@ -16,57 +16,64 @@ const winningCombos = [
 [0, 4, 8],
 [2, 4, 6]
 ];
-var strikeline=document.querySelector(".strike");
-var root=document.querySelector(':root');
+
+var strikeline = document.querySelector(".strike");
+var root = document.querySelector(':root');
+var flipCard=document.querySelector('.flip-card');
+var player1=document.querySelector(".player1");
+var player2=document.querySelector(".player2");
+var winnerShape=document.querySelector('.winner .shape');
+var winORdrawText=document.querySelector(".winner p");
+
 
 function strikethrough(index) {
-    
+
     switch (index) {
         case 0:
-            strikeline.style.left="-10px";
-            strikeline.style.top="15%";
+            strikeline.style.left = "-10px";
+            strikeline.style.top = "15%";
             strikeline.style.transform = "rotate(0deg)";
             root.style.setProperty('--diagonal', 'initial');
             break;
         case 1:
-            strikeline.style.left="-10px";
-            strikeline.style.top="49%";
+            strikeline.style.left = "-10px";
+            strikeline.style.top = "49%";
             strikeline.style.transform = "rotate(0deg)";
             root.style.setProperty('--diagonal', 'initial');
             break;
         case 2:
-            strikeline.style.left="-10px";
-            strikeline.style.top="82%";
+            strikeline.style.left = "-10px";
+            strikeline.style.top = "82%";
             strikeline.style.transform = "rotate(0deg)";
             root.style.setProperty('--diagonal', 'initial');
             break;
         case 3:
-            strikeline.style.left="16.5%";
-            strikeline.style.top="-12px";
+            strikeline.style.left = "16.5%";
+            strikeline.style.top = "-12px";
             strikeline.style.transform = "rotate(90deg)";
             root.style.setProperty('--diagonal', 'initial');
             break;
         case 4:
-            strikeline.style.left="50%";
-            strikeline.style.top="-12px";
+            strikeline.style.left = "50%";
+            strikeline.style.top = "-12px";
             strikeline.style.transform = "rotate(90deg)";
             root.style.setProperty('--diagonal', 'initial');
             break;
         case 5:
-            strikeline.style.left="83.5%";
-            strikeline.style.top="-12px";
+            strikeline.style.left = "83.5%";
+            strikeline.style.top = "-12px";
             strikeline.style.transform = "rotate(90deg)";
             root.style.setProperty('--diagonal', 'initial');
             break;
         case 6:
-            strikeline.style.left="0px";
-            strikeline.style.top="0px";
+            strikeline.style.left = "4px";
+            strikeline.style.top = "0px";
             strikeline.style.transform = "rotate(45deg)";
             root.style.setProperty('--diagonal', '415px');
             break;
         case 7:
-            strikeline.style.left="98%";
-            strikeline.style.top="0px";
+            strikeline.style.left = "98.8%";
+            strikeline.style.top = "0px";
             strikeline.style.transform = "rotate(135deg)";
             root.style.setProperty('--diagonal', '415px');
             break;
@@ -86,12 +93,12 @@ function triggerConfetti() {
 
 function playAgain() {
     clearGrid();
-    document.querySelector('.flip-card').classList.remove("active");
+    flipCard.classList.remove("active");
 }
 
 function changeDivScoreValues() {
-    document.querySelector(".player1").innerHTML = p1Score;
-    document.querySelector(".player2").innerHTML = p2Score;
+    player1.innerHTML = p1Score;
+    player2.innerHTML = p2Score;
 }
 window.onload = function () {
     console.log(p1Score);
@@ -138,10 +145,10 @@ function blockAllbtns() {
 }
 
 function updateScore() {
-    document.querySelector(".winner p").innerHTML = "Winner!";
+    winORdrawText.innerHTML = "Winner!";
     console.log(p1Score);
     console.log(p2Score);
-    !currentPlayer ? document.querySelector(".player1").innerHTML = p1Score : document.querySelector(".player2").innerHTML = p2Score;
+    !currentPlayer ? player1.innerHTML = p1Score : player2.innerHTML = p2Score;
     localStorage.setItem("p1Score", p1Score);
     localStorage.setItem("p2Score", p2Score);
     blockAllbtns();
@@ -168,10 +175,10 @@ function checkWin(b) {
             triggerConfetti();
             setTimeout(function () {
                 blockAllbtns()
-                document.querySelector(".strike").classList.remove("active");
-                document.querySelector('.winner .shape').classList.remove("circle");
-                document.querySelector('.winner .shape').classList.add("cross");
-                document.querySelector('.flip-card').classList.add("active");
+                strikeline.classList.remove("active");
+                winnerShape.classList.remove("circle");
+                winnerShape.classList.add("cross");
+                flipCard.classList.add("active");
                 clearGrid();
             }, 700);
         } else if (plays[e[0]] === 'O' && plays[e[1]] === 'O' && plays[e[2]] === 'O') {
@@ -183,10 +190,10 @@ function checkWin(b) {
             triggerConfetti();
             setTimeout(function () {
                 blockAllbtns()
-                document.querySelector(".strike").classList.remove("active");
-                document.querySelector('.winner .shape').classList.remove("cross");
-                document.querySelector('.winner .shape').classList.add("circle");
-                document.querySelector('.flip-card').classList.add("active");
+                strikeline.classList.remove("active");
+                winnerShape.classList.remove("cross");
+                winnerShape.classList.add("circle");
+                flipCard.classList.add("active");
                 clearGrid();
             }, 700);
         }
@@ -194,10 +201,10 @@ function checkWin(b) {
     counter++;
     if (counter == 9 && win == 0) {
         setTimeout(function () {
-            document.querySelector('.winner .shape').classList.remove("cross");
-            document.querySelector('.winner .shape').classList.remove("circle");
-            document.querySelector(".winner p").innerHTML = "Draw!";
-            document.querySelector('.flip-card').classList.add("active");
+            winnerShape.classList.remove("cross");
+            winnerShape.classList.remove("circle");
+            winORdrawText.innerHTML = "Draw!";
+            flipCard.classList.add("active");
             clearGrid();
         }, 300);
     }
