@@ -220,7 +220,7 @@ body {
     height: 8px;
     position: absolute;
     border-radius: 50px;
-    background-color: #bcff79;
+    background-color: red;
     transform-origin: left;
     transition: width 0.2s ease;
 }

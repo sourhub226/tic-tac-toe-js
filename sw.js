@@ -1,4 +1,4 @@
-var cacheName = 'TicTacToeV2';
+var cacheName = 'TicTacToeV3';
 var appShellFiles = [
   '.',
   'index.html',
