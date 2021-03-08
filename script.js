@@ -19,11 +19,11 @@ const winningCombos = [
 
 var strikeline = document.querySelector(".strike");
 var root = document.querySelector(':root');
-var flipCard=document.querySelector('.flip-card');
-var player1=document.querySelector(".player1");
-var player2=document.querySelector(".player2");
-var winnerShape=document.querySelector('.winner .shape');
-var winORdrawText=document.querySelector(".winner p");
+var flipCard = document.querySelector('.flip-card');
+var player1 = document.querySelector(".player1");
+var player2 = document.querySelector(".player2");
+var winnerShape = document.querySelector('.winner .shape');
+var winORdrawText = document.querySelector(".winner p");
 
 
 function strikethrough(index) {

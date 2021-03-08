@@ -80,7 +80,10 @@
             <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
         </div>
     </div>
+
     <div id="notification">A new version of this app is available. <br>Click <a id="reload">here</a> to update.</div>
+    <div class="version">v<span>1</span></div>
+
     <script src="confetti.browser.min.js"></script>
     <script src="script.js"></script>
     <script>
@@ -138,10 +141,17 @@
         // Here we reload the page
         navigator.serviceWorker.addEventListener('controllerchange', function() {
             if (refreshing) return;
-            console.log("reloading!!!");
+            console.log("Reloading...");
             window.location.reload();
             refreshing = true;
         });
+
+        //Update version
+        caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+                document.querySelector('.version span').innerHTML = key.substr(key.length - 1);
+            }));
+        })
 
     </script>
 </body>
