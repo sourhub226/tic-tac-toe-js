@@ -1,4 +1,4 @@
-var cacheName = 'TicTacToeV10';
+var cacheName = 'TicTacToeV11';
 var appShellFiles = [
     '.',
     'index.html',
@@ -74,8 +74,11 @@ self.addEventListener('install', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
+    
     e.respondWith(
         caches.match(e.request).then((r) => {
+            const channel = new BroadcastChannel('sw-messages');
+            channel.postMessage({title: 'Cache populated'});
             console.log('[Service Worker] Fetching resource: ' + e.request.url);
             return r || fetch(e.request).then((response) => {
                 return caches.open(cacheName).then((cache) => {
