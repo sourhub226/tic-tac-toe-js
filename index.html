@@ -92,6 +92,7 @@
                 scope: '.' // <--- THIS BIT IS REQUIRED
             }).then(function(registration) {
                 // Registration was successful
+                updateVersion();
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(err) {
                 // registration failed :(
@@ -147,11 +148,13 @@
         });
 
         //Update version
-        caches.keys().then((keyList) => {
-            return Promise.all(keyList.map((key) => {
-                document.querySelector('.version span').innerHTML = key.substr(key.length - 1);
-            }));
-        })
+        function updateVersion() {
+            caches.keys().then((keyList) => {
+                return Promise.all(keyList.map((key) => {
+                    document.querySelector('.version span').innerHTML = key.substr(key.length - 1);
+                }));
+            })
+        };
 
     </script>
 </body>
