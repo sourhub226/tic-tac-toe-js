@@ -153,9 +153,9 @@
         function updateVersion() {
             caches.keys().then((keyList) => {
                 return Promise.all(keyList.map((key) => {
-                    document.querySelector('.version span').innerHTML = key.substr(key.length - 1);
+                    document.querySelector('.version span').innerHTML = key.replace( /^\D+/g, '');
                 }));
-            })
+            });
         };
 
     </script>
