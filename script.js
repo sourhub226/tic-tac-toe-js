@@ -101,8 +101,8 @@ function changeDivScoreValues() {
     player2.innerHTML = p2Score;
 }
 window.onload = function () {
-    console.log(p1Score);
-    console.log(p2Score);
+//    console.log(p1Score);
+//    console.log(p2Score);
     if (p1Score == null && p2Score == null) {
         p1Score = 0;
         p2Score = 0;
@@ -117,8 +117,8 @@ function resetScore() {
     p1Score = 0;
     p2Score = 0;
     changeDivScoreValues();
-    console.log(p1Score);
-    console.log(p2Score);
+//    console.log(p1Score);
+//    console.log(p2Score);
 }
 
 function clearGrid() {
@@ -146,8 +146,8 @@ function blockAllbtns() {
 
 function updateScore() {
     winORdrawText.innerHTML = "Winner!";
-    console.log(p1Score);
-    console.log(p2Score);
+//    console.log(p1Score);
+//    console.log(p2Score);
     !currentPlayer ? player1.innerHTML = p1Score : player2.innerHTML = p2Score;
     localStorage.setItem("p1Score", p1Score);
     localStorage.setItem("p2Score", p2Score);
@@ -164,10 +164,10 @@ function checkWin(b) {
     }
     b.style.pointerEvents = 'none';
     plays[b.id] = b.getAttribute("data-state");
-    console.log(plays);
+//    console.log(plays);
     winningCombos.some(function (e) {
         if (plays[e[0]] === 'X' && plays[e[1]] === 'X' && plays[e[2]] === 'X') {
-            console.log("win " + winningCombos.indexOf(e));
+//            console.log("win " + winningCombos.indexOf(e));
             strikethrough(winningCombos.indexOf(e));
             p1Score++;
             win = 1;
@@ -182,7 +182,7 @@ function checkWin(b) {
                 clearGrid();
             }, 700);
         } else if (plays[e[0]] === 'O' && plays[e[1]] === 'O' && plays[e[2]] === 'O') {
-            console.log("win " + winningCombos.indexOf(e));
+//            console.log("win " + winningCombos.indexOf(e));
             strikethrough(winningCombos.indexOf(e));
             p2Score++;
             win = 1;
