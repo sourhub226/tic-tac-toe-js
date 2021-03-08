@@ -84,7 +84,6 @@
     </div>
 
     <div id="notification">A new version of this app is available. <br>Click <a id="reload">here</a> to update.</div>
-    <div class="version">v<span>1</span></div>
 
     <script src="confetti.browser.min.js"></script>
     <script src="script.js"></script>
@@ -147,23 +146,6 @@
             window.location.reload();
             refreshing = true;
         });
-
-        //Update version
-        const channel = new BroadcastChannel('sw-messages');
-        channel.addEventListener('message', event => {
-            console.log('Received', event.data);
-            updateVersion();
-        });
-
-        function updateVersion() {
-            caches.keys().then((keyList) => {
-                return Promise.all(keyList.map((key) => {
-                    console.log("Version updated!");
-                    alert("Version updated!");
-                    document.querySelector('.version span').innerHTML = key.replace(/^\D+/g, '');
-                }));
-            });
-        };
 
     </script>
 </body>

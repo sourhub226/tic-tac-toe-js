@@ -252,13 +252,3 @@ body {
 #notification.show {
     top: 6px;
 }
-
-.version {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: var(--bg-color-dark);
-    font-weight: 900;
-    letter-spacing: 1px;
-}
