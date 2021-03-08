@@ -88,7 +88,7 @@
 
     <script src="confetti.browser.min.js"></script>
     <script src="script.js"></script>
-    <script>
+    <script defer>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js', {
                 scope: '.' // <--- THIS BIT IS REQUIRED
@@ -149,11 +149,14 @@
             refreshing = true;
         });
 
+        
+    </script>
+    <script defer>
         //Update version
         function updateVersion() {
             caches.keys().then((keyList) => {
                 return Promise.all(keyList.map((key) => {
-                    document.querySelector('.version span').innerHTML = key.replace( /^\D+/g, '');
+                    document.querySelector('.version span').innerHTML = key.replace(/^\D+/g, '');
                 }));
             });
         };
