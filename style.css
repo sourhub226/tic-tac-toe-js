@@ -216,7 +216,7 @@ body {
 }
 
 .strike {
-    width: 0px;
+    width: 0;
     height: 8px;
     position: absolute;
     border-radius: 50px;
