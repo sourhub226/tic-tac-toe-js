@@ -1,10 +1,11 @@
-var cacheName = 'TicTacToeV12';
+var cacheName = 'TicTacToeV13';
 
 var appShellFiles = [
     '.',
     'index.html',
     'script.js',
     'style.css',
+    'manifest.json',
     'confetti.browser.min.js',
     'poppins.woff2',
     'icons/favicon/favicon.ico',
