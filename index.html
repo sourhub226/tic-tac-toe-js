@@ -19,70 +19,72 @@
 
 <body>
     <div class="container">
-        <h1>Tic Tac Toe</h1>
-        <div class="flip-card">
+        <div class="play-area">
+            <h1>Tic Tac Toe</h1>
+            <div class="flip-card">
 
-            <div class="button-grid">
-                <div class="btn" onclick=checkWin(this) id=0>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
+                <div class="button-grid">
+                    <div class="btn" onclick=checkWin(this) id=0>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=1>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=2>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=3>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=4>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=5>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=6>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=7>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="btn" onclick=checkWin(this) id=8>
+                        <div class="cross"></div>
+                        <div class="circle"></div>
+                    </div>
                 </div>
-                <div class="btn" onclick=checkWin(this) id=1>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=2>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=3>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=4>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=5>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=6>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=7>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-                <div class="btn" onclick=checkWin(this) id=8>
-                    <div class="cross"></div>
-                    <div class="circle"></div>
-                </div>
-            </div>
-            <div class="strike"></div>
-            <div class="winner">
-                <p>Winner!</p>
-                <div class="shape"></div>
-                <div class="reset-btn" onclick=playAgain()>Play again</div>
-            </div>
-        </div>
-        <div class="scoreboard">
-            <h2>Scoreboard</h2>
-            <div class="player-score">
-                <div class="score">
-                    <div class="cross"></div>
-                    <p class="player1"></p>
-                </div>
-                <div class="score">
-                    <div class="circle"></div>
-                    <p class="player2"></p>
+                <div class="strike"></div>
+                <div class="winner">
+                    <p>Winner!</p>
+                    <div class="shape"></div>
+                    <div class="reset-btn" onclick=playAgain()>Play again</div>
                 </div>
             </div>
-        </div>
-        <div class="reset-btn-area">
-            <div class="reset-btn" onclick=clearGrid() id="clear">Clear Grid</div>
-            <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
+            <div class="scoreboard">
+                <h2>Scoreboard</h2>
+                <div class="player-score">
+                    <div class="score">
+                        <div class="cross"></div>
+                        <p class="player1"></p>
+                    </div>
+                    <div class="score">
+                        <div class="circle"></div>
+                        <p class="player2"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="reset-btn-area">
+                <div class="reset-btn" onclick=clearGrid() id="clear">Clear Grid</div>
+                <div class="reset-btn" onclick=resetScore() id="reset">Reset Score</div>
+            </div>
         </div>
     </div>
 
@@ -90,6 +92,7 @@
 
     <script src="confetti.browser.min.js"></script>
     <script src="script.js"></script>
+
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js', {
@@ -151,6 +154,8 @@
         });
 
     </script>
+
+
 </body>
 
 </html>
