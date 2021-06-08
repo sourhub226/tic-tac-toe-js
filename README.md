@@ -1,4 +1,4 @@
-![pwa optimized](https://img.shields.io/badge/pwa-optimized-green)
+![pwa optimized](https://img.shields.io/static/v1?label=PWA&message=optimized&color=3a3a3a&labelColor=550ebe)
 [![CodeFactor](https://www.codefactor.io/repository/github/sourhub226/tic-tac-toe-js/badge)](https://www.codefactor.io/repository/github/sourhub226/tic-tac-toe-js)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sourhub226/tic-tac-toe-js/issues)
 ![ViewCount](https://views.whatilearened.today/views/github/sourhub226/tic-tac-toe-js.svg)
