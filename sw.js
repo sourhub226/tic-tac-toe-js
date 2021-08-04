@@ -1,6 +1,7 @@
-var cacheName = "TicTacToeV20";
+var cacheName = "TicTacToeV21";
 
 var appShellFiles = [
+	".",
 	"index.html",
 	"script.js",
 	"style.css",
