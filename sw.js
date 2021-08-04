@@ -1,4 +1,4 @@
-var cacheName = "TicTacToeV21";
+var cacheName = "TicTacToeV22";
 
 var appShellFiles = [
 	".",
@@ -8,7 +8,7 @@ var appShellFiles = [
 	"confetti.browser.min.js",
 	"poppins.woff2",
 	"icons/favicon/favicon.ico",
-	"icons/android/android-launchericon-144-144.png",
+	"icons/android/android-launchericon-512-512.png",
 ];
 
 self.addEventListener("install", (e) => {
