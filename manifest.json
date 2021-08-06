@@ -15,7 +15,9 @@
         "pastime",
         "entertainment",
         "game playing",
-        "tic tac toe"
+        "tic tac toe",
+        "pwa",
+        "progressive web game"
     ],
     "homepage_url": "https://github.com/sourhub226/tic-tac-toe-js",
     "icons": [
