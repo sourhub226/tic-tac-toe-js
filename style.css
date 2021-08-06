@@ -1,261 +1,265 @@
 @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('poppins.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("poppins.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+		U+2215, U+FEFF, U+FFFD;
 }
 
-
 :root {
-    --bg-color-dark: #1F3A93;
-    --bg-color-light: #334fac;
-    --diagonal: initial;
+	--bg-color-dark: #1f3a93;
+	--bg-color-light: #334fac;
+	--diagonal: initial;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    text-rendering: optimizeSpeed;
-    overflow-x: hidden;
-    background-color: var(--bg-color-dark);
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+	text-rendering: optimizeSpeed;
+	overflow-x: hidden;
+	background-color: var(--bg-color-dark);
+	font-family: "Poppins", sans-serif;
+	text-align: center;
 }
 
 .container {
-    max-width: 768px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    background-color: var(--bg-color-light);
+	max-width: 768px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	background-color: var(--bg-color-light);
 }
 
 .play-area {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    perspective: 1000px;
-    min-height: 600px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	perspective: 1000px;
+	min-height: 600px;
 }
 
 .play-area h1 {
-    background-color: #bcff79;
-    border-radius: 20px;
-    padding: 2px 15px;
-    color: var(--bg-color-dark);
+	background-color: #bcff79;
+	border-radius: 20px;
+	padding: 2px 15px;
+	color: var(--bg-color-dark);
 }
 
 .flip-card {
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-    width: 300px;
-    height: 300px;
-    margin: 20px;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease;
+	width: 300px;
+	height: 300px;
+	margin: 20px;
 }
 
 .flip-card.active {
-    transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
 }
 
 .button-grid,
 .winner {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    backface-visibility: hidden;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 .button-grid {
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .winner {
-    background-color: white;
-    color: black;
-    transform: rotateY(180deg);
-    border-radius: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+	background-color: white;
+	color: black;
+	transform: rotateY(180deg);
+	border-radius: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .winner .cross,
 .winner .circle {
-    position: static;
-    transform: scale(1.5);
+	position: static;
+	transform: scale(1.5);
 }
 
 .winner .cross {
-    width: 55px;
-    height: 55px;
+	width: 55px;
+	height: 55px;
 }
 
 .winner p {
-    margin: 30px;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--bg-color-dark);
+	margin: 30px;
+	font-size: 30px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--bg-color-dark);
 }
 
 .winner .reset-btn {
-    margin: 40px;
+	margin: 40px;
 }
 
 .btn {
-    width: 100px;
-    height: 100px;
-    border: 7px solid white;
-    position: relative;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	width: 100px;
+	height: 100px;
+	border: 7px solid white;
+	position: relative;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .cross,
 .circle {
-    transition: all 0.2s ease;
-    transform: scale(0);
-    position: absolute;
+	transition: all 0.2s ease;
+	transform: scale(0);
+	position: absolute;
 }
 
 .cross {
-    width: 100%;
+	width: 100%;
 }
 
 .cross:before,
 .cross:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 55px;
-    width: 10px;
-    border-radius: 100%;
-    background-color: #45d4ff;
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 55px;
+	width: 10px;
+	border-radius: 100%;
+	background-color: #45d4ff;
 }
 
 .cross:before {
-    transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .cross:after {
-    transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 .circle {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    border: 9px solid #ff4171;
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	border: 9px solid #ff4171;
 }
 
 .cross.active,
 .circle.active {
-    transform: scale(1);
+	transform: scale(1);
 }
 
 .scoreboard {
-    background-color: white;
-    width: 200px;
-    padding: 5px;
-    text-align: center;
-    border-radius: 30px;
-    color: var(--bg-color-dark);
+	background-color: white;
+	width: 200px;
+	padding: 5px;
+	text-align: center;
+	border-radius: 30px;
+	color: var(--bg-color-dark);
 }
 
 .player-score {
-    display: flex;
-    justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 .score .cross,
 .score .circle {
-    position: static;
-    transform: scale(0.8);
+	position: static;
+	transform: scale(0.8);
 }
 
 .score .cross {
-    width: 55px;
-    height: 55px;
+	width: 55px;
+	height: 55px;
 }
 
 .score p {
-    font-size: 30px;
+	font-size: 30px;
 }
 
 .reset-btn-area {
-    width: 300px;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+	width: 300px;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
 }
 
 .reset-btn {
-    padding: 10px;
-    background-color: dodgerblue;
-    cursor: pointer;
-    border-radius: 15px;
-    text-align: center;
-    color: white;
+	padding: 10px;
+	background-color: dodgerblue;
+	cursor: pointer;
+	border-radius: 15px;
+	text-align: center;
+	color: white;
 }
 
 #reset {
-    background-color: #fa3a3a;
+	background-color: #fa3a3a;
 }
 
 .strike {
-    width: 0;
-    height: 8px;
-    position: absolute;
-    border-radius: 50px;
-    background-color: #bcff79;
-    transform-origin: left;
-    transition: width 0.2s ease;
+	width: 0;
+	height: 8px;
+	position: absolute;
+	border-radius: 50px;
+	background-color: #bcff79;
+	transform-origin: left;
+	transition: width 0.2s ease;
 }
 
 .strike.active {
-    width: var(--diagonal, 320px);
+	width: var(--diagonal, 320px);
 }
 
 #notification {
-    width: fit-content;
-    background-color: #333;
-    padding: 10px;
-    position: fixed;
-    color: white;
-    top: -60px;
-    left: 0;
-    right: 0;
-    border-radius: 15px;
-    font-size: 13px;
-    margin: auto;
-    transition: 0.2s ease;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	background-color: #2b2b2b;
+	padding: 10px;
+	position: fixed;
+	color: white;
+	top: -60px;
+	left: 0;
+	right: 0;
+	border-radius: 15px;
+	font-size: 13px;
+	margin: auto;
+	transition: 0.2s ease;
 }
 
 #notification a {
-    color: #389dff;
-    cursor: pointer;
+	color: #389dff;
+	cursor: pointer;
 }
 
 #notification.show {
-    top: 6px;
+	top: 6px;
 }
