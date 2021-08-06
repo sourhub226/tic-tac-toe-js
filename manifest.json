@@ -1,7 +1,7 @@
 {
     "name": "Tic Tac Toe",
     "short_name": "Tic Tac Toe",
-    "description": "Don't have pen and paper? No problem! Play the classic Tic Tac Toe game in your browser!",
+    "description": "What if you don't have a pen and a piece of paper? Not a problem! Play the classic game of Tic Tac Toe right in your browser!",
     "author": "Sourabh Sathe",
     "display": "standalone",
     "start_url": ".",
@@ -240,12 +240,32 @@
     ],
     "screenshots": [
         {
-            "src": "screenshots/screenshot-1-750x1334.png",
+            "src": "screenshots/screenshot-m0-750x1334.png",
             "sizes": "750x1334",
             "type": "image/png"
         },
         {
-            "src": "screenshots/screenshot-0-1280x800.png",
+            "src": "screenshots/screenshot-m1-750x1334.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        },
+        {
+            "src": "screenshots/screenshot-m2-750x1334.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        },
+        {
+            "src": "screenshots/screenshot-d0-1280x800.png",
+            "sizes": "1280x800",
+            "type": "image/png"
+        },
+        {
+            "src": "screenshots/screenshot-d1-1280x800.png",
+            "sizes": "1280x800",
+            "type": "image/png"
+        },
+        {
+            "src": "screenshots/screenshot-d2-1280x800.png",
             "sizes": "1280x800",
             "type": "image/png"
         }

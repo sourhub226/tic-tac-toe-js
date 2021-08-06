@@ -1,4 +1,4 @@
-var cacheName = "TicTacToeV25";
+var cacheName = "TicTacToeV26";
 
 var appShellFiles = [
 	".",
