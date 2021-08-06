@@ -13,7 +13,9 @@
         "game",
         "fun",
         "pastime",
-        "entertainment"
+        "entertainment",
+        "game playing",
+        "tic tac toe"
     ],
     "homepage_url": "https://github.com/sourhub226/tic-tac-toe-js",
     "icons": [
@@ -238,13 +240,13 @@
     ],
     "screenshots": [
         {
-            "src": "screenshots/screenshot-0-1280x800.png",
-            "sizes": "1280x800",
+            "src": "screenshots/screenshot-1-750x1334.png",
+            "sizes": "750x1334",
             "type": "image/png"
         },
         {
-            "src": "screenshots/screenshot-1-750x1334.png",
-            "sizes": "750x1334",
+            "src": "screenshots/screenshot-0-1280x800.png",
+            "sizes": "1280x800",
             "type": "image/png"
         }
     ]

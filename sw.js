@@ -1,9 +1,9 @@
-var cacheName = "TicTacToeV24";
+var cacheName = "TicTacToeV25";
 
 var appShellFiles = [
 	".",
 	"index.html",
-	"script.js",
+	"gamelogic.js",
 	"style.css",
 	"confetti.browser.min.js",
 	"poppins.woff2",

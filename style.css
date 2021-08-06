@@ -27,6 +27,10 @@ body {
 	background-color: var(--bg-color-dark);
 	font-family: "Poppins", sans-serif;
 	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .container {
