@@ -3,7 +3,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sourhub226/tic-tac-toe-js/issues)
 ![ViewCount](https://views.whatilearened.today/views/github/sourhub226/tic-tac-toe-js.svg)
 
-<p align="center"><img src="app-banner.png" alt="app-banner" width=800/></p>
+<p align="center"><img src="app-banner.png" alt="app-banner" width=765/></p>
 <h1 align="center">Tic Tac Toe</h1>
 <p align="center">What if you don't have a pen and a piece of paper? Not a problem! Play the classic game of Tic Tac Toe right in your browser!</p>
 <h3 align="center">Click <a href="https://sourhub226.github.io/tic-tac-toe-js/">here</a> to play now!</h3>
