@@ -5,7 +5,7 @@
 
 <p align="center"><img src="app-banner.png" alt="app-banner" width=765/></p>
 <h1 align="center">Tic Tac Toe</h1>
-<p align="center">What if you don't have a pen and a piece of paper? Not a problem! Play the classic game of Tic Tac Toe right in your browser!</p>
+<p align="center">What if you don't have a pen and a piece of paper? Not a problem! Play the classic game of Tic Tac Toe right on your device!</p>
 <h3 align="center">Click <a href="https://sourhub226.github.io/tic-tac-toe-js/">here</a> to play now!</h3>
 <br>
 <p  align="middle"><img src="screenshots/screenshot-m0-750x1334.png" alt="app-screenshot" width='250px'/>
