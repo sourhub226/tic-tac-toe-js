@@ -8,7 +8,10 @@
 <p align="center">What if you don't have a pen and a piece of paper? Not a problem! Play the classic game of Tic Tac Toe right on your device!</p>
 <h3 align="center">Click <a href="https://sourhub226.github.io/tic-tac-toe-js/">here</a> to play now!</h3>
 <br>
-<p  align="middle"><img src="screenshots/screenshot-m0-750x1334.png" alt="app-screenshot" width='250px'/>
+<p align="center">OR</p>
+<p align="center"><a  href='https://play.google.com/store/apps/details?id=com.pwa.tictactoe&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width=200/></a></p>
+
+<p align="center"><img src="screenshots/screenshot-m0-750x1334.png" alt="app-screenshot" width='250px'/>
 <img src="screenshots/screenshot-m1-750x1334.png" alt="app-screenshot" width='250px'/>
 <img src="screenshots/screenshot-m2-750x1334.png" alt="app-screenshot" width='250px'/></p>
 <p align="center">Progressive Web Game built using HTML, CSS and Javascript.</p>
